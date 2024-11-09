@@ -1,0 +1,4 @@
+---
+- name: Install terraform
+  ansible.builtin.include_tasks:
+    file: install.yml

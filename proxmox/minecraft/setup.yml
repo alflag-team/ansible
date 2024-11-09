@@ -1,0 +1,10 @@
+---
+- name: Setup minecraft
+  hosts: minecraft
+  ignore_unreachable: true
+
+  roles:
+    - ../../common/base
+    - ../../common/docker
+    - ../../common/restic
+    - ../../common/kitsunebi

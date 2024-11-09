@@ -1,0 +1,3 @@
+---
+- name: Setup cache
+  import_playbook: proxmox/cache/setup.yml

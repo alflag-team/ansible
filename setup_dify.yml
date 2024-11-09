@@ -1,0 +1,3 @@
+---
+- name: Setup dify
+  import_playbook: proxmox/dify/setup.yml

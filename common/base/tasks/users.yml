@@ -1,0 +1,94 @@
+---
+# root user
+- name: Copy .gitconfig
+  template:
+    src: "./root/.gitconfig"
+    dest: "/root/.gitconfig"
+    owner: "root"
+    group: "root"
+    mode: 0600
+  become: true
+
+# infra user
+- name: Create infra user
+  user:
+    name: "{{ user_infra_name }}"
+    uid: 1000
+    password: "{{ user_infra_password | password_hash( 'sha512', user_infra_salt ) }}"
+    update_password: always
+    group: infra
+    groups: sudo
+    shell: /bin/bash
+    create_home: true
+    home: /home/infra
+    state: present
+  become: true
+
+- name: Copy ssh private key
+  ansible.builtin.copy:
+    content: "{{ user_infra_ssh_private_key }}"
+    dest: "/home/{{ user_infra_name }}/.ssh/infra"
+    mode: 0600
+    owner: "{{ user_infra_name }}"
+    group: "{{ user_infra_name }}"
+  become: true
+
+- name: Set authorized key
+  authorized_key:
+    user: "{{ user_infra_name }}"
+    state: present
+    key: "{{ lookup('file', './home/{{ user_infra_name }}/infra_id_ed25519.pub') }}"
+  become: true
+
+# minecraft user
+- name: Create minecraft user
+  user:
+    name: "{{ user_minecraft_name }}"
+    uid: 1001
+    password: "{{ user_minecraft_password | password_hash( 'sha512', user_minecraft_salt ) }}"
+    update_password: always
+    group: minecraft
+    groups: sudo
+    shell: /bin/bash
+    create_home: true
+    home: /home/minecraft
+    state: present
+  become: true
+
+- name: Create .ssh directory
+  ansible.builtin.file:
+    path: "/home/{{ user_minecraft_name }}/.ssh"
+    state: directory
+    mode: 0700
+    owner: "{{ user_minecraft_name }}"
+    group: "{{ user_minecraft_name }}"
+  become: true
+  become_user: "{{ user_minecraft_name }}"
+
+- name: Copy ssh config
+  ansible.builtin.copy:
+    src: "./home/{{ user_minecraft_name }}/.ssh/config"
+    dest: "/home/{{ user_minecraft_name }}/.ssh/config"
+    owner: "{{ user_minecraft_name }}"
+    group: "{{ user_minecraft_name }}"
+    mode: 0644
+  become: true
+
+- name: Copy .gitconfig
+  template:
+    src: "./home/{{ user_minecraft_name }}/.gitconfig"
+    dest: "/home/{{ user_minecraft_name }}/.gitconfig"
+    owner: "{{ user_minecraft_name }}"
+    group: "{{ user_minecraft_name }}"
+    mode: 0600
+  become: true
+
+- name: Create symlink to kitsunebi
+  ansible.builtin.file:
+    src: "/opt/kitsunebi"
+    dest: "/home/minecraft/kitsunebi"
+    state: link
+    owner: "{{ user_minecraft_name }}"
+    group: "{{ user_minecraft_name }}"
+    force: true
+  become: true

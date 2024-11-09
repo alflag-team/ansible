@@ -1,0 +1,3 @@
+---
+- name: Setup gateway
+  import_playbook: proxmox/gateway/setup.yml

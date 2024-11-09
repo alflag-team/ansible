@@ -1,0 +1,21 @@
+---
+- name: Install Nginx
+  ansible.builtin.apt:
+    name:
+      - nginx
+    state: present
+  become: true
+
+- name: Copy Zabbix Nginx Config
+  template:
+    src: zabbix.conf
+    dest: /etc/nginx/conf.d/zabbix.conf
+  become: true
+  notify: restart nginx
+
+- name: Enable Nginx
+  ansible.builtin.systemd_service:
+    name: nginx
+    enabled: true
+    state: started
+  become: true
