@@ -40,6 +40,15 @@
     key: "{{ lookup('file', './home/{{ user_infra_name }}/infra_id_ed25519.pub') }}"
   become: true
 
+- name: mkdir /home/infra/repos
+  ansible.builtin.file:
+    path: "/home/infra/repos"
+    state: directory
+    mode: "0755"
+    owner: "{{ user_infra_name }}"
+    group: "{{ user_infra_name }}"
+  become: true
+
 # minecraft user
 - name: Create minecraft user
   user:
