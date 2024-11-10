@@ -44,7 +44,7 @@
   ansible.builtin.file:
     path: "/home/infra/repos"
     state: directory
-    mode: "0755"
+    mode: "0775"
     owner: "{{ user_infra_name }}"
     group: "{{ user_infra_name }}"
   become: true
