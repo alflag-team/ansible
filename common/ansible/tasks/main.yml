@@ -1,0 +1,6 @@
+---
+- name: git clone ansible
+  ansible.builtin.include_tasks:
+    file: ansible.yml
+  when:
+    - not skip_ansible | default(false)
