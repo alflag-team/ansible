@@ -7,7 +7,5 @@
     - ../../common/base
     - apt
     - python3-pip
-    - kitsunebi
     - ansible
     - ../../common/docker
-    # - terraform
