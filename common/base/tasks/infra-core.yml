@@ -18,3 +18,13 @@
     group: "{{ user_infra_name }}"
   become: true
   become_user: infra
+
+- name: Create symlink to secrets
+  ansible.builtin.file:
+    src: "/home/infra/repos/infra-core/secrets"
+    dest: "/home/infra/secrets"
+    state: link
+    owner: "{{ user_infra_name }}"
+    group: "{{ user_infra_name }}"
+  become: true
+  become_user: infra
