@@ -7,6 +7,6 @@
     - ../../common/base
     - apt
     - python3-pip
-    - ansible
-    - terraform
+    - ../../common/ansible
+    - ../../common/terraform
     - ../../common/docker
