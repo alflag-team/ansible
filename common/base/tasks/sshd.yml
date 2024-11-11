@@ -10,10 +10,10 @@
   notify:
     - restart sshd
 
-- name: Copy sshd_config.d/99-password-auth
+- name: Copy sshd_config.d/99-password-auth.conf
   ansible.builtin.copy:
-    src: ./etc/ssh/sshd_config.d/99-password-auth
-    dest: /etc/ssh/sshd_config.d/99-password-auth
+    src: ./etc/ssh/sshd_config.d/99-password-auth.conf
+    dest: /etc/ssh/sshd_config.d/99-password-auth.conf
     owner: root
     group: root
     mode: 0644
