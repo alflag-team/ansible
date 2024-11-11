@@ -8,4 +8,5 @@
     - apt
     - python3-pip
     - ansible
+    - terraform
     - ../../common/docker
