@@ -2,7 +2,7 @@
 - name: git clone ansible
   ansible.builtin.git:
     repo: "https://github.com/alflag-team/ansible.git"
-    dest: "/home/infra/repos/ansible-common"
+    dest: "/home/infra/repos/ansible"
     version: "master"
     update: false
     accept_hostkey: true
