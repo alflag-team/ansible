@@ -1,0 +1,8 @@
+---
+- name: Install terraform
+  community.general.snap:
+    name: terraform
+    state: present
+    classic: true
+  become: true
+  become_user: infra
