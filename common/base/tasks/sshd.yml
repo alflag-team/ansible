@@ -21,6 +21,17 @@
   notify:
     - restart sshd
 
+- name: Copy sshd_config.d/00-cloudflare-ssh.conf
+  ansible.builtin.copy:
+    src: ./etc/ssh/sshd_config.d/00-cloudflare-ssh.conf
+    dest: /etc/ssh/sshd_config.d/00-cloudflare-ssh.conf
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+  notify:
+    - restart sshd
+
 - name: Delete sshd_config.d/60-cloudimg-settings.conf
   ansible.builtin.file:
     path: /etc/ssh/sshd_config.d/60-cloudimg-settings.conf
@@ -28,3 +39,12 @@
   become: true
   notify:
     - restart sshd
+
+- name: add ca.pub
+  ansible.builtin.copy:
+    src: ./etc/ssh/ca.pub
+    dest: /etc/ssh/ca.pub
+    owner: root
+    group: root
+    mode: 0644
+  become: true
