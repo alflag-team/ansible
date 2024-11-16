@@ -8,3 +8,13 @@
     accept_hostkey: true
   become: true
   become_user: infra
+
+- name: Create symlink to ansible
+  ansible.builtin.file:
+    src: "/home/infra/repos/ansible"
+    dest: "/home/infra/ansible"
+    state: link
+    owner: "{{ user_infra_name }}"
+    group: "{{ user_infra_name }}"
+  become: true
+  become_user: infra
