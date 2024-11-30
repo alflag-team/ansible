@@ -18,6 +18,7 @@
   ansible.builtin.shell: cat /etc/.git/config | grep -q '\[remote "origin"\]'
   when: etckeeper_git_config.stat.exists
   register: etckeeper_git_remote_origin
+  failed_when: etckeeper_git_remote_origin.rc > 1
   changed_when: etckeeper_git_remote_origin.rc == 1
 
 #
