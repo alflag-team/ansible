@@ -1,10 +1,8 @@
 ---
-- name: Git clone terraform-oraclecloud
+- name: Clone terraform-oraclecloud
   ansible.builtin.git:
     repo: "https://github.com/alflag-team/terraform-oraclecloud.git"
-    dest: "/home/infra/repos/terraform-oraclecloud"
+    dest: "~/repos/terraform-oraclecloud"
     version: "master"
     update: false
     accept_hostkey: true
-  become: true
-  become_user: infra

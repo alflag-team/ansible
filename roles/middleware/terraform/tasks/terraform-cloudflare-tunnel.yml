@@ -1,10 +1,8 @@
 ---
-- name: Git clone terraform-cloudflare-tunnel
+- name: Clone terraform-cloudflare-tunnel
   ansible.builtin.git:
     repo: "https://github.com/alflag-team/terraform-cloudflare-tunnel.git"
-    dest: "/home/infra/repos/terraform-cloudflare-tunnel"
+    dest: "~/repos/terraform-cloudflare-tunnel"
     version: "master"
     update: false
     accept_hostkey: true
-  become: true
-  become_user: infra

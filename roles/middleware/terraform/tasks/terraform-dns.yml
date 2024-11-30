@@ -1,10 +1,8 @@
 ---
-- name: Git clone terraform-dns
+- name: Clone terraform-dns
   ansible.builtin.git:
     repo: "https://github.com/alflag-team/terraform-dns.git"
-    dest: "/home/infra/repos/terraform-dns"
+    dest: "~/repos/terraform-dns"
     version: "master"
     update: false
     accept_hostkey: true
-  become: true
-  become_user: infra

@@ -4,5 +4,3 @@
     name: terraform
     state: present
     classic: true
-  become: true
-  become_user: infra
