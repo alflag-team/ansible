@@ -1,3 +1,0 @@
----
-- name: Setup wiki
-  import_playbook: onp/wiki/setup.yml

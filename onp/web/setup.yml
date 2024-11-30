@@ -1,6 +1,6 @@
 ---
-- name: Setup wiki
-  hosts: wiki
+- name: Setup web
+  hosts: web
   ignore_unreachable: true
 
   roles:
