@@ -1,0 +1,6 @@
+---
+- name: stop apache2
+  ansible.builtin.service:
+    name: apache2
+    state: stopped
+    enabled: false
