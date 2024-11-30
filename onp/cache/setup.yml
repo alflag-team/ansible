@@ -4,5 +4,5 @@
   ignore_unreachable: true
 
   roles:
-    - ../../common/vm
+    - ../../roles/common/vm
     - redis-server

@@ -4,7 +4,7 @@
   ignore_unreachable: true
 
   roles:
-    - ../../common/vm
+    - ../../roles/common/vm
     - mysql-server
     - nginx
     - php-fpm

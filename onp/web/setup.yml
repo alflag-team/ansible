@@ -4,6 +4,6 @@
   ignore_unreachable: true
 
   roles:
-    - ../../common/vm
-    - ../../middleware/php
-    - ../../middleware/caddy
+    - ../../roles/common/lxc
+    - ../../roles/middleware/php
+    - ../../roles/middleware/caddy

@@ -4,6 +4,6 @@
   ignore_unreachable: true
 
   roles:
-    - ../../common/vm
-    - ../../middleware/docker
-    - ../../middleware/ptero
+    - ../../roles/common/vm
+    - ../../roles/middleware/docker
+    - ../../roles/middleware/ptero

@@ -4,7 +4,7 @@
   ignore_unreachable: true
 
   roles:
-    - ../../common/vm
-    - ../../middleware/docker
-    - ../../middleware/restic
-    - ../../middleware/kitsunebi
+    - ../../roles/common/vm
+    - ../../roles/middleware/docker
+    - ../../roles/middleware/restic
+    - ../../roles/middleware/kitsunebi

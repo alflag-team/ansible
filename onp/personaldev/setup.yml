@@ -4,6 +4,6 @@
   ignore_unreachable: true
 
   roles:
-    - ../../common/vm
+    - ../../roles/common/vm
     - apt
-    - ../../middleware/docker
+    - ../../roles/middleware/docker
