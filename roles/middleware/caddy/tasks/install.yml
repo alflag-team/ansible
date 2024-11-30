@@ -22,9 +22,9 @@
     update_cache: true
   become: true
 
-- name: Start Caddy
+- name: Auto start Caddy
   ansible.builtin.service:
     name: caddy
-    state: started
+    state: stopped  # FIXME: Config がないと起動に失敗する
     enabled: true
   become: true
