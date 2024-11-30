@@ -19,7 +19,10 @@
   when: etckeeper_git_config.stat.exists
   register: etckeeper_git_remote_origin
 
-# /etc/.git/config が存在しない場合、etckeeper vcs remote add origin git@github.com:alflag-team/etc.git を実行
+#
 - name: Add remote origin to /etc/.git/config
   ansible.builtin.shell: etckeeper vcs remote add origin git@github.com:alflag-team/etc.git
-  when: not etckeeper_git_config.stat.exists
+  when: not etckeeper_git_remote_origin.rc == 0
+- name: Push to remote origin
+  ansible.builtin.shell: etckeeper vcs push -u origin master:{{ ansible_hostname }}
+  when: not etckeeper_git_remote_origin.rc == 0
