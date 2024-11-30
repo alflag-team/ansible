@@ -6,3 +6,20 @@
     update_cache: true
     state: present
   become: true
+
+# /etc/.git/config が存在する場合、etckeeper が git で管理されているとみなす
+- name: Check if /etc/.git/config exists
+  ansible.builtin.stat:
+    path: /etc/.git/config
+  register: etckeeper_git_config
+
+# /etc/.git/config に [remote "origin"] が設定されている場合、初期化されているとみなす
+- name: Check if [remote "origin"] is set in /etc/.git/config
+  ansible.builtin.shell: cat /etc/.git/config | grep -q '\[remote "origin"\]'
+  when: etckeeper_git_config.stat.exists
+  register: etckeeper_git_remote_origin
+
+# /etc/.git/config が存在しない場合、etckeeper vcs remote add origin git@github.com:alflag-team/etc.git を実行
+- name: Add remote origin to /etc/.git/config
+  ansible.builtin.shell: etckeeper vcs remote add origin git@github.com:alflag-team/etc.git
+  when: not etckeeper_git_config.stat.exists
