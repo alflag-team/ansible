@@ -23,7 +23,7 @@
     state: present
   become: true
 
-- name: Enable unbound
+- name: Start unbound
   ansible.builtin.systemd_service:
     name: unbound
     enabled: yes
@@ -36,4 +36,4 @@
     dest: /etc/unbound/unbound.conf
   become: true
   notify:
-    - Restart unbound
+    - restart unbound
