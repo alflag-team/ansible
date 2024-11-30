@@ -4,9 +4,7 @@
   ignore_unreachable: true
 
   roles:
-    - ../../roles/common/vm
-    - apt
-    - python3-pip
+    - ../../roles/common/lxc
+    - ../../roles/middleware/python3-pip
     - ../../roles/middleware/ansible
     - ../../roles/middleware/terraform
-    - ../../roles/middleware/docker
