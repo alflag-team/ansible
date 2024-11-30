@@ -5,7 +5,6 @@
       - etckeeper
     update_cache: true
     state: present
-  become: true
 
 # /etc/.git/config が存在する場合、etckeeper が git で管理されているとみなす
 - name: Check if /etc/.git/config exists
