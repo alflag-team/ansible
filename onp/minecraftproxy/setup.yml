@@ -1,0 +1,10 @@
+---
+- name: Setup minecraftproxy
+  hosts: minecraftproxy
+  ignore_unreachable: true
+
+  roles:
+    - ../../common/vm
+    - ../../middleware/docker
+    - ../../middleware/restic
+    - ../../middleware/kitsunebi

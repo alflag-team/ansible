@@ -1,0 +1,9 @@
+---
+- name: Setup wiki
+  hosts: wiki
+  ignore_unreachable: true
+
+  roles:
+    - ../../common/vm
+    - ../../middleware/php
+    - ../../middleware/caddy

@@ -1,0 +1,12 @@
+---
+- name: Setup admin
+  hosts: admin
+  ignore_unreachable: true
+
+  roles:
+    - ../../common/vm
+    - apt
+    - python3-pip
+    - ../../middleware/ansible
+    - ../../middleware/terraform
+    - ../../middleware/docker
