@@ -1,12 +1,12 @@
 ---
-- name: restart unbound
-  ansible.builtin.systemd_service:
-    name: unbound
-    state: restarted
-  become: true
-
 - name: restart systemd-resolved
   ansible.builtin.systemd_service:
     name: systemd-resolved
+    state: restarted
+  become: true
+
+- name: restart unbound
+  ansible.builtin.systemd_service:
+    name: unbound
     state: restarted
   become: true
