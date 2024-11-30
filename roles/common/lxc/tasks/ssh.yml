@@ -1,0 +1,9 @@
+---
+- name: Copy .ssh/config
+  ansible.builtin.copy:
+    src: ./root/.ssh/config
+    dest: /root/.ssh/config
+    owner: root
+    group: root
+    mode: 0644
+  become: true
