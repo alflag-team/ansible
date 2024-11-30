@@ -1,3 +1,3 @@
 ---
 - name: Setup minecraftv2
-  import_playbook: proxmox/minecraftv2/setup.yml
+  import_playbook: onp/minecraftv2/setup.yml

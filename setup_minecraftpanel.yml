@@ -1,3 +1,3 @@
 ---
 - name: Setup minecraftpanel
-  import_playbook: proxmox/minecraftpanel/setup.yml
+  import_playbook: onp/minecraftpanel/setup.yml
