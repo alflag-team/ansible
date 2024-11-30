@@ -1,0 +1,5 @@
+---
+- name: mkdir ~/repos
+  ansible.builtin.file:
+    src: "~/repos"
+    state: directory

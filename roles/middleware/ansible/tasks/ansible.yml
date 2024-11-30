@@ -1,20 +1,14 @@
 ---
-- name: git clone ansible
+- name: Clone ansible.git
   ansible.builtin.git:
-    repo: "https://github.com/alflag-team/ansible.git"
-    dest: "/home/infra/repos/ansible"
+    repo: "git@github.com:alflag-team/ansible.git"
+    dest: "~/repos/ansible"
     version: "master"
     update: false
     accept_hostkey: true
-  become: true
-  become_user: infra
 
 - name: Create symlink to ansible
   ansible.builtin.file:
-    src: "/home/infra/repos/ansible"
-    dest: "/home/infra/ansible"
+    src: "~/repos/ansible"
+    dest: "~/ansible"
     state: link
-    owner: "{{ user_infra_name }}"
-    group: "{{ user_infra_name }}"
-  become: true
-  become_user: infra
