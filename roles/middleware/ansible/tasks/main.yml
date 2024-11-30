@@ -1,6 +1,12 @@
 ---
-- name: git clone ansible
+- name: Clone ansible
   ansible.builtin.include_tasks:
-    file: ansible.yml
+    file: git.yml
   when:
-    - not skip_ansible | default(false)
+    - not skip_clone_ansible | default(false)
+
+- name: Install ansible
+  ansible.builtin.include_tasks:
+    file: install.yml
+  when:
+    - not skip_isntall_ansible | default(false)
