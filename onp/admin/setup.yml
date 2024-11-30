@@ -5,6 +5,7 @@
 
   roles:
     - ../../roles/common/lxc
+    - ../../roles/middleware/cloudflare-ssh
     - ../../roles/middleware/python3-pip
     - ../../roles/middleware/ansible
     - ../../roles/middleware/terraform
