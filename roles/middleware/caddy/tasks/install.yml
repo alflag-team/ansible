@@ -4,7 +4,6 @@
     name: gnupg
     state: present
     update_cache: true
-  become: true
 
 - name: Add Caddy repository key
   ansible.builtin.apt_key:
@@ -20,11 +19,9 @@
     name: caddy
     state: present
     update_cache: true
-  become: true
 
 - name: Auto start Caddy
   ansible.builtin.service:
     name: caddy
     state: stopped  # FIXME: Config がないと起動に失敗する
     enabled: true
-  become: true
