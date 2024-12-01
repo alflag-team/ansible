@@ -1,0 +1,3 @@
+---
+- name: Setup app
+  import_playbook: onp/app/setup.yml
