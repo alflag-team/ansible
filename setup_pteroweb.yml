@@ -1,0 +1,4 @@
+
+---
+- name: Setup pteropanel
+  import_playbook: onp/ptero-panel/setup.yml

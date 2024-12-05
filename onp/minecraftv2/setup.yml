@@ -1,9 +1,0 @@
----
-- name: Setup minecraftv2
-  hosts: minecraftv2
-  ignore_unreachable: true
-
-  roles:
-    - ../../roles/common/vm
-    - ../../roles/middleware/docker
-    - ../../roles/middleware/ptero

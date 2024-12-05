@@ -1,3 +1,0 @@
----
-- name: Setup minecraftpanel
-  import_playbook: onp/minecraftpanel/setup.yml
