@@ -1,0 +1,8 @@
+---
+- name: Setup app.common
+  hosts: app.common
+  ignore_unreachable: true
+
+  roles:
+    - ../../roles/common/lxc
+    - ../../roles/middleware/python3-pip

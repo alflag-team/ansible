@@ -1,8 +1,0 @@
----
-- name: Setup cache
-  hosts: cache
-  ignore_unreachable: true
-
-  roles:
-    - ../../common/base
-    - redis-server

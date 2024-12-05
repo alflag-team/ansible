@@ -1,3 +1,0 @@
----
-- name: Setup monitor
-  import_playbook: proxmox/monitor/setup.yml

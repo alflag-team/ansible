@@ -1,8 +1,0 @@
----
-- name: Setup unbound
-  hosts: unbound
-  ignore_unreachable: true
-
-  roles:
-    - ../../common/base
-    - ../../common/unbound
