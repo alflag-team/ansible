@@ -2,25 +2,25 @@
 - name: Install php
   ansible.builtin.apt:
     name:
-      - php
-      - php-cli
-      - php-fpm
-      - php-mysql
-      - php-xml
-      - php-mbstring
-      - php-curl
-      - php-zip
-      - php-gd
-      - php-imagick
-      - php-intl
-      - php-bcmath
-      - php-redis
-      - php-ldap
-      - php-pear
-      - php-dev
-      - php-xml
-      - php-memcached
-      - php-soap
-      - php-xmlrpc
-      - php-xdebug
+      - php8.1
+      - php8.1-cli
+      - php8.1-fpm
+      - php8.1-mysql
+      - php8.1-xml
+      - php8.1-mbstring
+      - php8.1-curl
+      - php8.1-zip
+      - php8.1-gd
+      - php8.1-imagick
+      - php8.1-intl
+      - php8.1-bcmath
+      - php8.1-redis
+      - php8.1-ldap
+      - php8.1-pear
+      - php8.1-dev
+      - php8.1-xml
+      - php8.1-memcached
+      - php8.1-soap
+      - php8.1-xmlrpc
+      - php8.1-xdebug
     state: present
