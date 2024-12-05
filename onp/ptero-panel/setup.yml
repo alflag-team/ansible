@@ -5,4 +5,6 @@
 
   roles:
     - ../../roles/common/lxc
-    - ../../roles/middleware/
+    - ../../roles/middleware/mysql-server
+    - ../../roles/middleware/php
+    - ../../roles/middleware/nginx  # FIXME: Replace with Caddy
