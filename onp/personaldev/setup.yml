@@ -1,9 +1,0 @@
----
-- name: Setup personaldev
-  hosts: personaldev
-  ignore_unreachable: true
-
-  roles:
-    - ../../roles/common/vm
-    - apt
-    - ../../roles/middleware/docker

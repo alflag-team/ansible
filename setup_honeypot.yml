@@ -1,3 +1,0 @@
----
-- name: Setup honeypot
-  import_playbook: onp/honeypot/setup.yml

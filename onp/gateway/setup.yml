@@ -1,8 +1,0 @@
----
-- name: Setup gateway
-  hosts: gateway
-  ignore_unreachable: true
-
-  roles:
-    - ../../roles/common/vm
-    - ../../roles/middleware/docker

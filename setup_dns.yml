@@ -1,3 +1,0 @@
----
-- name: Setup dns
-  import_playbook: onp/dns/setup.yml

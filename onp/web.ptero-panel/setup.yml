@@ -1,6 +1,6 @@
 ---
-- name: Setup ptero-panel
-  hosts: ptero-panel
+- name: Setup web.ptero-panel
+  hosts: web.ptero-panel
   ignore_unreachable: true
 
   roles:

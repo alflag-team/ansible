@@ -1,3 +1,0 @@
----
-- name: Setup database
-  import_playbook: onp/database/setup.yml

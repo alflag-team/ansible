@@ -1,6 +1,6 @@
 ---
-- name: Setup web
-  hosts: web
+- name: Setup web.common
+  hosts: web.common
   ignore_unreachable: true
 
   roles:

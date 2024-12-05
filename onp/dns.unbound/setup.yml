@@ -1,6 +1,6 @@
 ---
-- name: Setup dns
-  hosts: dns
+- name: Setup dns.unbound
+  hosts: dns.unbound
   ignore_unreachable: true
 
   roles:

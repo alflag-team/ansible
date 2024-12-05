@@ -1,3 +1,0 @@
----
-- name: Setup monitor
-  import_playbook: onp/monitor/setup.yml

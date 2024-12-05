@@ -1,3 +1,0 @@
----
-- name: Setup personaldev
-  import_playbook: onp/personaldev/setup.yml

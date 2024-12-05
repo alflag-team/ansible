@@ -1,3 +1,0 @@
----
-- name: Setup minecraftproxy
-  import_playbook: onp/minecraftproxy/setup.yml
