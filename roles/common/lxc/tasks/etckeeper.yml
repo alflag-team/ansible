@@ -6,6 +6,24 @@
     update_cache: true
     state: present
 
+# 設定ファイルをコピーする
+- name: Copy etckeeper.conf
+  ansible.builtin.copy:
+    src: ./etc/etckeeper/etckeeper.conf
+    dest: /etc/etckeeper/etckeeper.conf
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+- name: Copy commit.d/99push
+  ansible.builtin.copy:
+    src: ./etc/etckeeper/commit.d/99push
+    dest: /etc/etckeeper/commit.d/99push
+    owner: root
+    group: root
+    mode: 0755
+  become: true
+
 # /etc/.git/config が存在する場合、etckeeper が git で管理されているとみなす
 - name: Check if /etc/.git/config exists
   ansible.builtin.stat:
