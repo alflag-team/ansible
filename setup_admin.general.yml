@@ -1,0 +1,3 @@
+---
+- name: Setup admin.general
+  import_playbook: onp/admin.general/setup.yml

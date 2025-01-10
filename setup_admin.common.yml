@@ -1,3 +1,0 @@
----
-- name: Setup admin.common
-  import_playbook: onp/admin.common/setup.yml

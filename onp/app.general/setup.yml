@@ -1,6 +1,6 @@
 ---
-- name: Setup app.common
-  hosts: app.common
+- name: Setup app.general
+  hosts: app.general
   ignore_unreachable: true
 
   roles:

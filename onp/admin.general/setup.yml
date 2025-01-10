@@ -1,6 +1,6 @@
 ---
-- name: Setup admin.common
-  hosts: admin.common
+- name: Setup admin.general
+  hosts: admin.general
   ignore_unreachable: true
 
   roles:
