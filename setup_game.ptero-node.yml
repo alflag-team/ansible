@@ -1,0 +1,3 @@
+---
+- name: Setup game.ptero-node
+  import_playbook: onp/game.ptero-node/setup.yml
