@@ -1,0 +1,9 @@
+---
+- name: Copy mysqld.cnf
+  ansible.builtin.copy:
+    src: ./etc/mysql/mysql.conf.d/mysqld.cnf
+    dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart mysql
