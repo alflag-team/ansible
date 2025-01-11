@@ -6,14 +6,12 @@
       - curl
       - gnupg
     state: present
-  become: true
 
 - name: Create /etc/apt/keyrings
   ansible.builtin.file:
     path: /etc/apt/keyrings
     state: directory
     mode: 0755
-  become: true
 
 - name: Download docker gpg key
   ansible.builtin.get_url:
@@ -21,13 +19,11 @@
     dest: /etc/apt/keyrings/docker.asc
     mode: 0644
     checksum: "{{ docker_gpg_checksum }}"
-  become: true
 
 - name: Add docker repository
   ansible.builtin.apt_repository:
     repo: deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
     state: present
-  become: true
 
 - name: Install docker
   ansible.builtin.apt:
@@ -39,11 +35,9 @@
       - docker-compose-plugin
     update_cache: true
     state: present
-  become: true
 
 - name: Enable docker
   ansible.builtin.systemd_service:
     name: docker
     state: started
     enabled: true
-  become: true

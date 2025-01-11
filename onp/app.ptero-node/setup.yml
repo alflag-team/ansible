@@ -1,9 +1,0 @@
----
-- name: Setup app.ptero-node
-  hosts: app.ptero-node
-  ignore_unreachable: true
-
-  roles:
-    - ../../roles/common/vm
-    - ../../roles/middleware/docker
-    - ../../roles/middleware/ptero
