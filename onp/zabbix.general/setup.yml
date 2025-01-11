@@ -5,7 +5,7 @@
 
   roles:
     - ../../roles/common/lxc
-    - ../../roles/middleware/zabbix-server
     - ../../roles/middleware/mysql-server
     - ../../roles/middleware/nginx
-    - ../../roles/middleware/php-fpm
+    - ../../roles/middleware/php
+    - ../../roles/middleware/zabbix-server
