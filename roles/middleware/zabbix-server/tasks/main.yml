@@ -9,14 +9,14 @@
     file: zabbix_7.0.yml
   when: ansible_facts['lsb']['release'] == "24.04"
 
-- name: Install mysql
+- name: Setup mysql
   ansible.builtin.include_tasks:
     file: mysql.yml
 
-- name: Install php-fpm
+- name: Setup php-fpm
   ansible.builtin.include_tasks:
     file: php-fpm.yml
 
-- name: Install nginx
+- name: Setup nginx
   ansible.builtin.include_tasks:
     file: nginx.yml

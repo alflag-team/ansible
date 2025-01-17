@@ -27,3 +27,9 @@
       - php8.1-xmlrpc
       - php8.1-zip
     state: present
+
+- name: Start php-fpm
+  ansible.builtin.systemd_service:
+    name: php8.1-fpm
+    state: started
+    enabled: true
