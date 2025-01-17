@@ -4,7 +4,8 @@
     name:
       - mysql-server
       - mysql-client
-      - python3-pymysql  # Required for Ansible MySQL modules
+      - python3-pymysql  # Required for Ansible
+      - python3-setuptools  # Required for Ansible
     state: present
 
 - name: Set Root Password
