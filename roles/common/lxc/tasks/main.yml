@@ -1,4 +1,10 @@
 ---
+- name: locale
+  ansible.builtin.include_tasks:
+    file: locale.yml
+  when:
+    - not skip_locale | default(false)
+
 - name: unattended-upgrades
   ansible.builtin.include_tasks:
     file: unattended-upgrades.yml
