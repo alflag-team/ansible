@@ -1,9 +1,0 @@
----
-- name: Setup wiki
-  hosts: wiki
-  ignore_unreachable: true
-
-  roles:
-    - ../../common/base
-    - ../../common/php
-    - ../../common/caddy

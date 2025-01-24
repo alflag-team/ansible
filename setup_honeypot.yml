@@ -1,3 +1,0 @@
----
-- name: Setup honeypot
-  import_playbook: proxmox/honeypot/setup.yml

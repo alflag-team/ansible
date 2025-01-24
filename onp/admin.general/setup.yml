@@ -1,0 +1,11 @@
+---
+- name: Setup admin.general
+  hosts: admin.general
+  ignore_unreachable: true
+
+  roles:
+    - ../../roles/common/lxc
+    - ../../roles/common/cloudflare-ssh
+    - ../../roles/middleware/python3-pip
+    - ../../roles/middleware/ansible
+    - ../../roles/middleware/terraform

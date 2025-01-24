@@ -1,0 +1,9 @@
+---
+- name: Setup web.general
+  hosts: web.general
+  ignore_unreachable: true
+
+  roles:
+    - ../../roles/common/lxc
+    - ../../roles/middleware/php
+    - ../../roles/middleware/caddy

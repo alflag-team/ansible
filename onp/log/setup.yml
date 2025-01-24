@@ -1,0 +1,8 @@
+---
+- name: Setup log
+  hosts: log
+  ignore_unreachable: true
+
+  roles:
+    - ../../roles/common/vm
+    - rsyslog
