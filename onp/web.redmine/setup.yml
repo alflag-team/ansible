@@ -6,5 +6,4 @@
   roles:
     - ../../roles/common/lxc
     - ../../roles/common/cloudflare-ssh
-    - ../../roles/middleware/caddy
-    - ../../roles/middleware/mysql-server
+    - ../../roles/middleware/docker
