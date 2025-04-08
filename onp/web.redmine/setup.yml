@@ -1,9 +1,0 @@
----
-- name: Setup web.redmine
-  hosts: web.redmine
-  ignore_unreachable: true
-
-  roles:
-    - ../../roles/common/lxc
-    - ../../roles/common/cloudflare-ssh
-    - ../../roles/middleware/docker
