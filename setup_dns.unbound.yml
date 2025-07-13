@@ -1,3 +1,0 @@
----
-- name: Setup dns.unbound
-  import_playbook: onp/dns.unbound/setup.yml

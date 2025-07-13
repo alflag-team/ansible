@@ -1,3 +1,0 @@
----
-- name: Setup web.general
-  import_playbook: onp/web.general/setup.yml

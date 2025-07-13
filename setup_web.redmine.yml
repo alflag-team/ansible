@@ -1,4 +1,0 @@
-
----
-- name: Setup web.redmine
-  import_playbook: onp/web.redmine/setup.yml

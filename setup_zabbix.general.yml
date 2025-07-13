@@ -1,4 +1,0 @@
-
----
-- name: Setup zabbix.general
-  import_playbook: onp/zabbix.general/setup.yml
