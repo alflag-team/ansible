@@ -14,15 +14,6 @@
     state: present
   become: true
 
-- name: mkdir /home/infra/repos
-  ansible.builtin.file:
-    path: "/home/infra/repos"
-    state: directory
-    mode: "0775"
-    owner: "{{ user_infra_name }}"
-    group: "{{ user_infra_name }}"
-  become: true
-
 # minecraft user
 - name: Create minecraft user
   user:
@@ -36,42 +27,4 @@
     create_home: true
     home: /home/minecraft
     state: present
-  become: true
-
-- name: Create .ssh directory
-  ansible.builtin.file:
-    path: "/home/{{ user_minecraft_name }}/.ssh"
-    state: directory
-    mode: 0700
-    owner: "{{ user_minecraft_name }}"
-    group: "{{ user_minecraft_name }}"
-  become: true
-  become_user: "{{ user_minecraft_name }}"
-
-- name: Copy ssh config
-  ansible.builtin.copy:
-    src: "./home/{{ user_minecraft_name }}/.ssh/config"
-    dest: "/home/{{ user_minecraft_name }}/.ssh/config"
-    owner: "{{ user_minecraft_name }}"
-    group: "{{ user_minecraft_name }}"
-    mode: 0644
-  become: true
-
-- name: Copy .gitconfig
-  template:
-    src: "./home/{{ user_minecraft_name }}/.gitconfig"
-    dest: "/home/{{ user_minecraft_name }}/.gitconfig"
-    owner: "{{ user_minecraft_name }}"
-    group: "{{ user_minecraft_name }}"
-    mode: 0600
-  become: true
-
-- name: Create symlink to kitsunebi
-  ansible.builtin.file:
-    src: "/opt/kitsunebi"
-    dest: "/home/minecraft/kitsunebi"
-    state: link
-    owner: "{{ user_minecraft_name }}"
-    group: "{{ user_minecraft_name }}"
-    force: true
   become: true
