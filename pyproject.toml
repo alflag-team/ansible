@@ -19,4 +19,4 @@ dependencies = [
 infra = "alflag_infra.cli:main"
 
 [tool.setuptools.packages.find]
-where = ["scripts"]
+where = ["modules"]

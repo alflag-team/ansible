@@ -8,7 +8,7 @@
 Atlas は実行入口と run log を担当し、実際の構成適用は Ansible が担当します。
 
 ```bash
-atlas scripts install git+https://github.com/alflag-team/ansible.git#feature/atlas-infra-runner --name alflag-infra
+atlas scripts install git+https://github.com/alflag-org/ansible.git#master --name alflag-infra
 atlas scripts shims
 
 atlas run infra inventory
@@ -17,6 +17,10 @@ atlas run infra check
 atlas run infra diff
 atlas run infra apply
 ```
+
+Atlas release として必要な `VERSION`、`commands/`、`modules/`、`requirements.txt`
+を repository root に置いています。`commands/infra.py` が Atlas から見える
+コマンド入口で、実装本体は `modules/alflag_infra` にあります。
 
 ## Local Development
 
