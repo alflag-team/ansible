@@ -1,6 +1,7 @@
 import os
 import shlex
 import subprocess
+import sys
 from pathlib import Path
 
 from .context import ansible_config_path, inventory_path, playbook_path, repo_root
@@ -58,6 +59,8 @@ class AnsibleRunner:
     def _run(self, cmd: list[str]) -> None:
         env = os.environ.copy()
         env["ANSIBLE_CONFIG"] = str(ansible_config_path())
+        executable_dir = str(Path(sys.executable).parent)
+        env["PATH"] = os.pathsep.join([executable_dir, env.get("PATH", "")])
 
         print(f"Running: {shlex.join(cmd)}", flush=True)
         subprocess.run(cmd, check=True, cwd=self.repo_root, env=env)
